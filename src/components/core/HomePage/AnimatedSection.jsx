@@ -5,14 +5,16 @@ import {TypeAnimation} from "react-type-animation"
 
 const AnimatedSection = ({position, heading, subHeading, ctabutton1 , ctabutton2 , codeblock , codeColor , gradient}) => {
   return (
-    <div className={`flex ${position} justify-between items-center px-[90px] py-[120px] gap-[98px] w-11/12]`}>
+    <div className={`flex ${position} justify-between px-20 md:items-center py-28 gap-[98px] w-11/12 animation`}>
         
         {/*left-section  */}
-        <div className='w-[510px] flex flex-col gap-8'>
+        <div className='lg:w-[510px] flex flex-col gap-8 left-Animation'>
 
-            {heading}
+            <div className='left-heading'>
+                 {heading}
+            </div>
 
-            <div className='text-richblack-300 font-bold'>
+            <div className='text-richblack-300 font-bold flex flex-wrap left-subheading'>
                 {subHeading}
             </div>
 
@@ -32,7 +34,7 @@ const AnimatedSection = ({position, heading, subHeading, ctabutton1 , ctabutton2
         </div>
 
         {/* Right section */}
-        <div className=' flex flex-row text-base p-[20px] lg:w-[525px] relative bg-richblack-50 bg-opacity-10 )'>
+        <div className=' flex flex-row text-base p-[20px] lg:w-[535px] w-full relative bg-richblack-50 bg-opacity-10 right-Animation'>
 
             <div className='absolute w-[525.95px] -top-24 -left-20 opacity-70 '>
                 <img src={gradient} alt='gradient ellipse background'></img>
