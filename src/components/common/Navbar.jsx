@@ -25,14 +25,18 @@ const Navbar = () => {
 
     const [subLinks, setSubLinks] = useState([]);
 
+    
+
     // function to fetch sublinks through the api connector method which uses axios api call
     const fetchSubLinks = async() =>{
         try{
-            const result = await apiConnector("GET", categories.CATEGORIES_API);
-            console.log(result);
-            setSubLinks(result.data.data);
+            const result = await apiConnector( "GET",categories.CATEGORIES_API);
+            console.log( "category data ", result.data.categoriesData);
+            setSubLinks(result.data.categoriesData);
         }catch(error){
-            console.error(error)
+            console.error("Error response:", error.response);
+            console.error("Error request:", error.request);
+            console.error("Message:", error.message);
         }
     }
 
@@ -42,7 +46,7 @@ const Navbar = () => {
     }
 
     useEffect( () => {
-        fetchSubLinks();
+       fetchSubLinks();
     }, []);
 
   return (
@@ -66,31 +70,26 @@ const Navbar = () => {
                                         <p>{link.title}</p>
                                         <RiArrowDropDownLine />
 
-                                        <div className='invisible absolute left-[50%]
-                                            translate-x-[-50%] translate-y-[80%]
-                                            top-[50%]
+                                        <div className='invisible absolute left-[50%] z-50
+                                            translate-x-[-50%] translate-y-[50%]
+                                            top-[10%]
                                             flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900
                                             opacity-0 transition-all duration-200 group-hover:visible
                                             group-hover:opacity-100 lg:w-[300px]'>
 
-                                            <div className='absolute left-[50%] top-0
+                                            <div className='absolute left-[50%] top-0 z-50
                                                 translate-x-[80%]
                                                 translate-y-[-45%] h-6 w-6 rotate-45 rounded bg-richblack-5'>
                                             </div>
 
                                             {
-                                                subLinks?.length > 0 && (
-                                                <div>
-                                                    {
-                                                        subLinks.map((items, index) => {
-                                                            return(
-                                                                <Link to={items} key={index}>
-                                                                    {items}
-                                                                </Link>
-                                                            )
-                                                        })
-                                                    }
-                                                </div>)
+                                                subLinks?.length ? (
+                                                        subLinks.map( (subLink, id) => (
+                                                            <Link to={`/${subLink.name.split(" ").join("-").toLowerCase()}`} key={id}>
+                                                                <p>{subLink.name}</p>
+                                                            </Link>
+                                                        ) )
+                                                ) : (<div></div>)
                                             }
                                         </div>
 
