@@ -2,12 +2,12 @@ import React from "react";
 import { HiMiniUsers } from "react-icons/hi2";
 import { FaSitemap } from "react-icons/fa";
 
-const CardDetails = ({ element, currentCard, setCurrentCard, index}) => {
+const CardDetails = ({ element, index}) => {
 
 
 
   return (
-    <div className={`flex flex-col rounded-sm justify-between w-[28%] ${index === 0 ? "bg-richblack-5 shadow-[12px_12px_0_0_yellow]" : "bg-richblack-700 "}`}>
+    <div className={`flex flex-col rounded-sm justify-between w-[28%] card-data ${index === 0 ? "bg-richblack-5 shadow-[12px_12px_0_0_#FFD60A]" : "bg-richblack-700 "}`}>
        <div className="px-8 py-6 flex flex-col gap-3 ">
             <h2 className={` text-xl ${index === 0 ? "text-richblack-800":"text-richblack-25"}`}>{element.heading}</h2>
 
