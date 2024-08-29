@@ -13,7 +13,7 @@ const LearningLanguage = () => {
             <div className='flex flex-col gap-4 md:items-center learning-section-text'>
 
                 <div className='text-4xl font-semibold text-center -tracking-wider'>
-                    Your swiss knife for <HighlightText text={"learning any language"}/>
+                    Your swiss knife for <HighlightText text={"learning any language"} gradient={`bg-gradient-to-r from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB]`}/>
                 </div>
                 <div className='text-center text-richblack-600 items-center text-base font-medium md:w-[70%]'>
                     Using spin making learning multiple languages easy. with 20+ languages
