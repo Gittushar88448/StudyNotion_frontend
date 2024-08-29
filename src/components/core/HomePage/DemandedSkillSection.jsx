@@ -39,7 +39,7 @@ const DemandedSkillSection = () => {
             <div className='flex flex-row justify-between  w-full demand-subheading-first'>
                 <div className='text-4xl font-semibold -tracking-[2%] text-richblack-900'>
                      Get the skills you need for a 
-                     <HighlightText text={"job that is in demand."}/> 
+                     <HighlightText text={"job that is in demand."} gradient={`bg-gradient-to-r from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB]`}/> 
                 </div>
                 <div className='flex flex-col lg:w-[60%] gap-7'>
                     <div className='text-richblack-400 text-base font-semibold'>The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.</div>
