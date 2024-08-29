@@ -26,7 +26,7 @@ const ExploreMore = () => {
     <div className=" w-11/12 flex flex-col items-center gap-3 relative md:mt-12">
       {/* heading */}
       <div className="text-4xl font-semibold text-center">
-        Unlock the<HighlightText text={"Power of Code"} />
+        Unlock the<HighlightText text={"Power of Code"} gradient={`bg-gradient-to-r from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB]`}/>
       </div>
 
       <p className="text-base text-center text-richblack-300 mt-3 flex justify-center">
